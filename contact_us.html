@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>Contact Page</title>
+
+</head>
+
+<body>
+    <nav class="bg-gray-400 p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            
+
+            <div class="space-x-4">
+                <a href="index.html" class="text-white hover:underline">Home</a>
+                <a href="biodata.html" class="text-white hover:underline">Biodata</a>
+                <a href="contact_us.html" class="text-white hover:underline">Contact</a>
+                <a href="myweb.html" class="text-white hover:underline">Myweb</a>
+            </div>
+        </div>
+    </nav><br><br><br><br>
+
+    <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+
+        <h1 class="text-2xl font-bold mb-4">Contact</h1>
+
+        <form id="registrationForm">
+
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-600">Name</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
+                <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
+                <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-600">Gender</label>
+                <div class="flex">
+                    <label class="inline-flex items-center mr-4">
+                        <input type="radio" name="gender" value="male" class="form-radio">
+                        <span class="ml-2">Male</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="gender" value="female" class="form-radio">
+                        <span class="ml-2">Female</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="religion" class="block text-sm font-medium text-gray-600">Religion</label>
+                <select id="religion" name="religion" class="mt-1 p-2 w-full border rounded-md">
+                    <option value="christian">Christian</option>
+                    <option value="buddhist">Buddhist</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="konghucu">Konghucu</option>
+                    <option value="muslim">Muslim</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="address" class="block text-sm font-medium text-gray-600">Address</label>
+                <textarea id="address" name="address" rows="3" class="mt-1 p-2 w-full border rounded-md"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-600">Hobbies</label>
+                <div class="flex">
+                    <label class="inline-flex items-center mr-4">
+                        <input type="checkbox" name="hobbies" value="reading" class="form-checkbox">
+                        <span class="ml-2">Reading</span>
+                    </label>
+                    <label class="inline-flex items-center mr-4">
+                        <input type="checkbox" name="hobbies" value="gaming" class="form-checkbox">
+                        <span class="ml-2">Gaming</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="hobbies" value="traveling" class="form-checkbox">
+                        <span class="ml-2">Traveling</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <button type="button" onclick="validateForm()" class="bg-blue-500 text-white py-2 px-4 rounded-md">Submit</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script>
+        function validateForm() {
+            const form = document.getElementById('registrationForm');
+            const elements = form.elements;
+
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i].type !== 'checkbox' && elements[i].value === '') {
+                    alert(`Please fill in the ${elements[i].name} field.`);
+                    return;
+                }
+
+                if (elements[i].type === 'checkbox' && !elements[i].checked) {
+                    alert(`Please select at least one hobby.`);
+                    return;
+                }
+            }
+
+            alert('Form is valid. Submitting...');
+            // Add logic to submit the form data here
+        }
+    </script>
+
+    <div class="container">
+        
+    </div>
+
+    <footer class="bg-gray-400 text-white p-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet scelerisque nulla.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Contact</h3>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-gray-300">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Subscribe</h3>
+                    <form>
+                        <input type="email" placeholder="Your email" class="bg-gray-700 text-white p-2 rounded">
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>
